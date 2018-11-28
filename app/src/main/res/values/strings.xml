@@ -9,11 +9,11 @@
 
     <string-array name="image">
         <item>@drawable/choco_cake</item>
-        <item>@drawable/spinachArt</item>
-        <item>@drawable/friedChicken</item>
+        <item>@drawable/spinachart</item>
+        <item>@drawable/friedchicken</item>
         <item>@drawable/spaghetti</item>
-        <item>@drawable/frenchToast</item>
-        <item>@drawable/turkeySandwich</item>
+        <item>@drawable/frenchtoast</item>
+        <item>@drawable/turkeysandwich</item>
     </string-array>
 
 
@@ -30,10 +30,10 @@
     <string-array name="description">
         <item>A simple delicious chocolate cake.</item>
         <item>Nice zesty stringy spinach artichoke dip.</item>
-        <item>Maybe something than Granny's fried home recipe.</item>
+        <item>Maybe something than Granny\'s fried home recipe.</item>
         <item>A little Italian mixed with a lot of southern.</item>
         <item>A simple home made french toast recipe.</item>
-        <item>Want to eat but don't want to cook, here's a quick fix for you.</item>
+        <item>Want to eat but don\'t want to cook, here\'s a quick fix for you.</item>
     </string-array>
 
 
@@ -49,11 +49,11 @@
 
     <string-array name="ingredients">
         <item>eggs, milk, cake mix, chocolate syrup, etc.</item>
-        <item>1lb of baby spinach, can of artichoke hearts, 3 choices of 8oz cheese, other things I'm sure.</item>
+        <item>1lb of baby spinach, can of artichoke hearts, 3 choices of 8oz cheese, other things I\'m sure.</item>
         <item>8 chicken drumsticks, flour, seasonings of your choice, peanut oil</item>
         <item>spaghetti noodles, olive oil, ground turkey or beef, spaghetti sauce, bbq, some peppers. </item>
         <item>day old bread, vanilla extract, 1 egg, ground cinnamon</item>
-        <item>bread of your choice, processed or real cut turkey, some mayo, lettuce(not romaine, it's on recall), tomatoes, and hands.</item>
+        <item>bread of your choice, processed or real cut turkey, some mayo, lettuce(not romaine, it\'s on recall), tomatoes, and hands.</item>
     </string-array>
 
 

@@ -24,17 +24,20 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mMusicData = new ArrayList<>();
+        mRecipeData = new ArrayList<>();
 
-        mAdapter = new MusicAdapter(this, mMusicData);
+        mAdapter = new RecipeAdapter(this, mRecipeData);
         mRecyclerView.setAdapter(mAdapter);
 
         initializeData();
     }
 
     private void initializeData() {
-
+        String[]  image = getResources().getStringArray(R.array.image);
         String[] recipeName = getResources().getStringArray(R.array.recipeName);
         String[] description = getResources().getStringArray(R.array.description);
+        String[] date = getResources().getStringArray(R.array.date);
+        String[] ingredients  =getResources().getStringArray(R.array.ingredients);
+        String[] instruction = getResources().getStringArray(R.array.instruction);
     }
 }
