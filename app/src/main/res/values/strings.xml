@@ -7,14 +7,14 @@
     <string name="ingredients">Ingredients</string>
     <string name="instruction_placeholder">Instructions</string>
 
-    <string-array name="image">
+    <array name="image">
         <item>@drawable/choco_cake</item>
         <item>@drawable/spinachart</item>
         <item>@drawable/friedchicken</item>
         <item>@drawable/spaghetti</item>
         <item>@drawable/frenchtoast</item>
         <item>@drawable/turkeysandwich</item>
-    </string-array>
+    </array>
 
 
     <string-array name="recipeName">

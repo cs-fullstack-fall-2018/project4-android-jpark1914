@@ -1,5 +1,6 @@
 package com.example.student.recipebook;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -33,11 +34,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeData() {
-        String[]  image = getResources().getStringArray(R.array.image);
+        TypedArray image = getResources().obtainTypedArray(R.array.image);
         String[] recipeName = getResources().getStringArray(R.array.recipeName);
         String[] description = getResources().getStringArray(R.array.description);
         String[] date = getResources().getStringArray(R.array.date);
         String[] ingredients  =getResources().getStringArray(R.array.ingredients);
         String[] instruction = getResources().getStringArray(R.array.instruction);
+
+        mRecipeData.clear();
+
+        for(int i=0; i < recipeName.length; i++){
+            mRecipeData.add(new RecipeBook(image.getResourceId(i,0),recipeName[i], description[i], date[i], ingredients[i], instruction[i]));
+        }
+        image.recycle();
+        mAdapter.notifyDataSetChanged();
     }
 }
