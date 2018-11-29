@@ -3,6 +3,7 @@ package com.example.student.recipebook;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.net.Uri;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<RecipeBook> mRecipeData;
     private RecipeAdapter mAdapter;
     private String mWebsiteEditText;
+    private String mShareTextEditText;
+    private String mLocationEditText;
 
 
     @Override
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new RecipeAdapter(this, mRecipeData);
         mRecyclerView.setAdapter(mAdapter);
         mWebsiteEditText = (String) "http://www.jpdevelops.com";
+        mShareTextEditText = (String)"This app";
+        mLocationEditText = (String) "Crosstown Concourse";
 
         initializeData();
     }
@@ -60,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
                 openWebsite();
                 break;
             case R.id.item2:
-                Toast.makeText(this, "This App was created in Memphis, TN", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "This App was created in Memphis, TN at Crosstown Concourse", Toast.LENGTH_SHORT).show();
+                openLocation();
                 break;
             case R.id.item3:
                 Toast.makeText(this, "Item 3 Selected", Toast.LENGTH_SHORT).show();
+                shareText();
                 break;
 
         }
@@ -96,6 +104,32 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
 
         // Find an activity to hand the intent and start that activity.
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Log.d("ImplicitIntents", "Can't handle this intent!");
+        }
+    }
+
+    public void shareText() {
+       String txt = mShareTextEditText;
+        String mimeType = "text/plain";
+        ShareCompat.IntentBuilder
+                .from(this)
+                .setType(mimeType)
+                .setText(txt)
+                .startChooser();
+    }
+    public void openLocation() {
+        // Get the string indicating a location. Input is not validated; it is
+        // passed to the location handler intact.
+        String loc = mLocationEditText;
+
+        // Parse the location and create the intent.
+        Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
+        Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
+
+        // Find an activity to handle the intent, and start that activity.
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
